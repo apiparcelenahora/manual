@@ -18582,15 +18582,101 @@ footer {
 }
 
 /* POST */
-article.post a h2 code {
+article.post p code {
+    color: black;
+    background-color: #e8f6f0;
+}
+  
+article.post p code b {
+    background: #49cc90;
+    color: white;
+    padding: 5px 10px;
+}
+
+#operacao {
+    padding: 4px;
+    max-width: 90%;
+}
+  
+  
+#operacao article > p {
+    background: #e8f6f0;
+    border-radius: 10px;
+    display: block;
+    padding: 10px;
+    border:solid #49cc90;
+}
+  #content article > a:hover {
+    background: #222;
+    text-decoration: none;
+  }
+  
+  #content a h2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  #content a h2 code {
+    float: right;
+    font-size: 14px;
+  }
+  
+  #content a h2 code b {
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px 6px;
+  }
+  
+  /* Default */
+  #content article {
+    border-color: #e2e7ea;
+  }
+  
+  #content article a h2 code {
+    color: #657e8b;
+  }
+  
+  #content article a h2 code b {
+    background: #657e8b;
+    text-transform: uppercase;
+  }
+  
+  /* GET */
+  #content article.GET a h2 code {
+    color: #119bdf;
+  }
+  
+  #content article.GET a h2 code b {
+    background: #119bdf;
+  }
+  
+  /* POST */
+  #content article.POST a h2 code {
     color: #52ce0e;
   }
   
-article.post a h2 code b {
+  #content article.POST a h2 code b {
     background: #52ce0e;
-    color: white;
-    padding: 2px 7px;
-}
+  }
+  
+  /* PUT */
+  #content article.PUT a h2 code {
+    color: #e08f10;
+  }
+  
+  #content article.PUT a h2 code b {
+    background: #e08f10;
+  }
+  
+  /* DELETE */
+  #content article.DELETE a h2 code {
+    color: #e02a10;
+  }
 
 
 @media(max-width:991.98px) {
