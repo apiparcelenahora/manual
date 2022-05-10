@@ -85,3 +85,4 @@ A versão atual da API Parceiros possui suporte ás seguintes UF's, Órgãos e D
 | BA      | DETRAN/SEFAZ      | Todos                               |
 | RJ      | DETRAN/SEFAZ      | Todos                               |
 
+Teste
