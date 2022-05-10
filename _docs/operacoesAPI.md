@@ -19,3 +19,13 @@ A operação consulta débitos, tem como objetivo realizar a consulta nos princi
         </code> Método de consulta de débitos (teste)</p>
 </article>
 </section>
+
+<section id="operacao">
+
+<article class="post">
+
+`**POST** /api/v1/ConsultaDebito` Método de consulta de débitos (teste)
+
+</article>
+
+</section>
