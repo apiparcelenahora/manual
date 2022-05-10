@@ -63,26 +63,25 @@ A versão atual da API Parceiros possui suporte ás seguintes UF's, Órgãos e D
 | UF      | Òrgãos            | Débitos retornados                  |
 |---------|-------------------|-------------------------------------|
 | MG      | DETRAN            | MULTAS                              |
-| DF      | DETRAN/SEEC       | Multas / Licenciamento / IPVA / IPTU / ITBI |
-| SE      | DETRAN/SEFAZ      | Todos                               |
+| DF      | DETRAN / SEEC     | MULTAS / LICENCIAMENTO / IPVA / IPTU / ITBI |
+| SE      | DETRAN / SEFAZ    | MULTAS / LICENCIAMENTO                               |
 | AL      | DETRAN            | Todos                               |
-| SP      | DETRAN/SEFAZ      | Todos                               |
-| ES      | DETRAN/SEFAZ      | Todos                               |
+| SP      | DETRAN / SEFAZ    | Todos                               |
+| ES      | DETRAN / SEFAZ    | Todos                               |
 | MA      | DETRAN            | Todos                               |
-| MS      | DETRAN/SEFAZ      | Todos                               |
-| RR      | DETRAN/SEFAZ      | Todos                               |
-| AM      | DETRAN/SEFAZ      | Todos                               |
+| MS      | DETRAN / SEFAZ    | Todos                               |
+| RR      | DETRAN / SEFAZ    | Todos                               |
+| AM      | DETRAN / SEFAZ    | Todos                               |
 | RN      | DETRAN            | Todos                               |
-| GO      | DETRAN/SEFAZ      | Todos                               |
-| PI      | DETRAN/SEFAZ      | Todos                               |
-| MT      | DETRAN/SEFAZ      | Todos                               |
+| GO      | DETRAN / SEFAZ    | Todos                               |
+| PI      | DETRAN / SEFAZ    | Todos                               |
+| MT      | DETRAN / SEFAZ    | Todos                               |
 | PR      | SEFAZ             | Todos                               |
-| PR      | DETRAN/SEFAZ      | Todos                               |
-| AP      | DETRAN/SEFAZ      | Todos                               |
-| RS      | DETRAN/SEFAZ      | Todos                               |
-| RO      | DETRAN/SEFAZ      | Todos                               |
-| TO      | DETRAN/SEFAZ      | Todos                               |
-| BA      | DETRAN/SEFAZ      | Todos                               |
-| RJ      | DETRAN/SEFAZ      | Todos                               |
+| PR      | DETRAN / SEFAZ    | Todos                               |
+| AP      | DETRAN / SEFAZ    | Todos                               |
+| RS      | DETRAN / SEFAZ    | Todos                               |
+| RO      | DETRAN / SEFAZ    | Todos                               |
+| TO      | DETRAN / SEFAZ    | Todos                               |
+| BA      | DETRAN / SEFAZ    | Todos                               |
+| RJ      | DETRAN / SEFAZ    | Todos                               |
 
-Teste
