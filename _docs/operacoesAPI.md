@@ -11,21 +11,3 @@ Conforme orientação apresentada em [Arquitetura da Integração]({{ site.baseu
 
 A operação consulta débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país.
 
-<section id="operacao">
-<article class="post">
-        <p>
-        <code>
-            <b>POST</b> /api/v1/ConsultaDebito
-        </code> Método de consulta de débitos (teste)</p>
-</article>
-</section>
-
-<section id="operacao">
-
-<article class="post">
-
-`**POST** /api/v1/ConsultaDebito` Método de consulta de débitos (teste)
-
-</article>
-
-</section>
