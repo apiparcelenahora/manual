@@ -9,23 +9,52 @@ Conforme orientação apresentada em [Arquitetura da Integração]({{ site.baseu
 
 ## Operação: ConsultarDebito
 
-A operação consulta débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país.
+A operação consulta débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país. É a partir dessa operação que os dados dos veículos, imóveis e etc.. são enviados para que se seja identificado os débitos do veículo/imóvel.
 
 <section id="operacao">
 <article class="post">
         <p>
         <code>
             <b>POST</b> /api/v1/ConsultaDebito
+        </code> Método de consulta de débitos </p>
+</article>
+</section>
+
+## Operação: CotacaoDebito
+
+A operação cotação débito, tem como objetivo consultar a simulação de valores para parcelamento (pagamento). É a partir dessa operação que os dados referentes ao pedido, quantidade de parcelas e débitos selecionados são enviados para que seja determinado o valor a ser cobrado do cliente/consumidor.
+
+<section id="operacao">
+<article class="post">
+        <p>
+        <code>
+            <b>POST</b> /api/v1/CotacaoDebito
+        </code> Consultar simulação de valores para parcelamento (pagamento) </p>
+</article>
+</section>
+
+## Operação: Pagamento
+
+A operação pagamento, tem como objetivo efetivar o pagamento via cartão de crédito. É a partir dessa operação que os dados referentes ao pedido (já cotado), bem como os dados de pagamento do cartão são enviados para efetivar o pagamento junto a operadora de cartão.
+
+<section id="operacao">
+<article class="post">
+        <p>
+        <code>
+            <b>POST</b> /api/v1/Pagamento
         </code> Método de consulta de débitos (teste2)</p>
 </article>
 </section>
 
+### Operação: ConsultarStatusPedido
+
+A operação pagamento, tem como objetivo efetivar o pagamento via cartão de crédito. É a partir dessa operação que os dados referentes ao pedido (já cotado), bem como os dados de pagamento do cartão são enviados para efetivar o pagamento junto a operadora de cartão.
+
 <section id="operacao">
-
-<article class="post">
-
-`**POST** /api/v1/ConsultaDebito` Método de consulta de débitos (teste)
-
+<article class="get">
+        <p>
+        <code>
+            <b>GET</b> /api/v1/Pagamento
+        </code> Método de consulta de débitos (teste3)</p>
 </article>
-
 </section>
