@@ -18625,12 +18625,12 @@ article.get p code b {
 }
   
   
-#operacao > .get article > p {
+#operacao > .get > p {
     background: #ebf3fb;
     border-radius: 10px;
     display: block;
     padding: 10px;
-    border:solid #ebf3fb;
+    border:solid #61affe;
 }
 
 

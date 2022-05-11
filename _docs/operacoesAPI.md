@@ -42,7 +42,7 @@ A operação pagamento, tem como objetivo efetivar o pagamento via cartão de cr
         <p>
         <code>
             <b>POST</b> /api/v1/Pagamento
-        </code> Método de consulta de débitos (teste2)</p>
+        </code> Método de consulta de débitos </p>
 </article>
 </section>
 
