@@ -3,4 +3,18 @@
   links:
     - title: Operações API
       url: "docs/operacoesAPI"
+      children:
+        - title: "API: ConsultarDebito"
+          url: "docs/operacoesAPI#api-consultardebito"
+        - title: "API: CotacaoDebito"
+          url: "docs/operacoesAPI#api-cotacaodebito"
+        - title: "API: Fatura"
+          url: "docs/operacoesAPI#api-fatura"
+        - title: "API: Pagamento"
+          url: "docs/operacoesAPI#api-pagamento"
+    - title: Códigos de retorno
+      url: "docs/codigosRetorno"
+- title: Swagger
+  external_url: https://api.parcelenahora.com.br/swagger/index.html
+
 

@@ -18640,6 +18640,7 @@ article.get p code b {
 
 .language-json.highlighter-rouge .highlight .highlight code span{
     color: white;
+    background-color: black;
 } 
 
 .language-json.highlighter-rouge .highlight .highlight code .s2{
@@ -18649,6 +18650,10 @@ article.get p code b {
 .language-json.highlighter-rouge .highlight .highlight code .mi{
     color: #b44233;
 } 
+
+/* .language-json.highlighter-rouge .highlight .highlight code .err{
+    color: #89dca2;
+}  */
 
 @media(max-width:991.98px) {
     footer {
