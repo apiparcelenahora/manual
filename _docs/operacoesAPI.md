@@ -80,6 +80,7 @@ Está API opera com uma requisição POST, formada por 3 campos.
   "codFaturas": [0]
 }
 ```
+
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
 |`pedido`|Número de identificação do pedido.|**inteiro (int32)**|Sim|
@@ -123,6 +124,7 @@ Está requisição é formada por 12 campos.
   "telefone": "string"
 }
 ```
+
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
 |`cpf`|Cpf do titular do débito.|**string**|Não|
