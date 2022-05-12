@@ -127,27 +127,43 @@ Está requisição é formada por 12 campos.
 
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
-|`cpf`|Cpf do titular do débito.|**string**|Não|
-|`uf`|UF a qual pertence o débito.|**string**|Não|
-|`placa`|Placa identificadora do veículo.|**string**|Não|
-|`renavam`|Renavam identificador do veículo.|**string**|Não|
-|`inscricaoImovel`|Numeração referente a identificação do imóvel junto a fazenda. | **string** |Não|
-|`numeroGuia`|Número de identificação da guia de pagamento.|**string**|Não|
-|`numeroLancamento`|Número de identificação do lançamento.|**string**|Não|
-|`numeroParcelamento`|Número do parcelamento junto ao órgão.|**string**|Não|
-|`numeroCDA`|Número de identificação da dívida junto ao governo.|**string**|Não|
-|`tipoDebito`|Número de identificação do pagamento na adquirente.|**enum** (Array [7]) |Sim|
+|`cdFaturas`|Numeração identificadora da fatura.|**Array de string's**|Não|
+|`parcelas`|Numeração referente a quantidade de parcelas selecionadas para pagamento.|**string**|Não|
+|`valorPagCartao`|Valor pago pelo cliente ao final de sua cotação (valor total).|**string**|Não|
+|`valorWynk`|Valor pago pelo cliente a partir da Wynk.|**string**|Não|
+|`email`|Endereço de e-mail para cobrança do cartão do cliente. | **string** |Não|
+|`celular`|Número de telefone(celular) do cliente.|**string**|Não|
+|`securityCode`|Código de segurança do cartão do cliente.|**string**|Não|
+|`creditCardNumber`|Numeração do cartão do cliente.|**string**|Não|
+|`monthYear`|Mês e ano do vencimento do cartão do cliente.|**string**|Não|
+|`holderName`|Nome do portador do cartão.|**string**|Não|
+|`cpfcnpj`|CPF ou CNPJ do portado do cartão.|**string**|Não|
+|`telefone`|Número de telefone do cliente.|**string**|Não|
 
 
-### Operação: ConsultarStatusPedido
+## Requisição GET - ConsultarStatusPedido
 
-A operação pagamento, tem como objetivo efetivar o pagamento via cartão de crédito. É a partir dessa operação que os dados referentes ao pedido (já cotado), bem como os dados de pagamento do cartão são enviados para efetivar o pagamento junto a operadora de cartão.
+Essa requisição é composta por um único parâmetro e tem como objetivo consultar o status de um pedido. 
 
 <section id="operacao">
 <article class="get">
         <p>
         <code>
-            <b>GET</b> /api/v1/Pagamento
-        </code> Método de consulta de débitos (teste3)</p>
+            <b>GET</b> /api/v1/Pagamento/ConsultarStatusPedido
+        </code> Consultar o status do pedido</p>
 </article>
 </section>
+
+### Exemplo da requisição - ConsultarStatusPedido
+
+1. Curl
+```
+curl -X 'GET' \
+  'https://api.parcelenahora.com.br/api/v1/Pagamento/ConsultarStatusPedido?CodigoPedido=2' \
+  -H 'accept: */*'
+```
+
+2. Request URL
+```
+https://api.parcelenahora.com.br/api/v1/Pagamento/ConsultarStatusPedido?CodigoPedido=2
+```
