@@ -3,13 +3,13 @@ title: Operações API
 description: Descrição das operações possíveis com o uso da API
 ---
 
-# Operações - API Parceiros
+# Operações - API's Parceiros
 
-Conforme orientação apresentada em [Arquitetura da Integração]({{ site.baseurl }}/introducao/#arquitetura-da-integração), as operações executadas em nossa API, devem seguir a combinação URL base + endpoint da operação desejada.
+Conforme orientação apresentada em [Arquitetura da Integração]({{ site.baseurl }}/introducao/#arquitetura-da-integração), as operações executadas em nossas API's, devem seguir a combinação URL base + endpoint da operação desejada.
 
-## Operação: ConsultarDebito
+## API: ConsultarDebito
 
-A operação consulta débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país. É a partir dessa operação que os dados dos veículos, imóveis e etc.. são enviados para que se seja identificado os débitos do veículo/imóvel.
+A API consultar débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país. É a partir dessa API que os dados dos veículos, imóveis e etc.. são enviados para que se seja identificado os débitos do veículo/imóvel.
 
 <section id="operacao">
 <article class="post">
@@ -19,6 +19,37 @@ A operação consulta débitos, tem como objetivo realizar a consulta nos princi
         </code> Método de consulta de débitos </p>
 </article>
 </section>
+
+#### Corpo da requisição
+
+```json
+{
+  "cpf": "string",
+  "uf": "string",
+  "placa": "string",
+  "renavam": "string",
+  "inscricaoImovel": "string",
+  "numeroGuia": "string",
+  "numeroLancamento": "string",
+  "numeroParcelamento": "string",
+  "numeroCDA": "string",
+  "tipoDebito": 0
+}
+```
+Está API trabalha com um método POST, formado por 10 campos:
+
+|Propriedade|Descrição|Tipo|Obrigatório|
+|---|---|---|---|
+|`cpf`|Cpf do titular do débito.|**string**|Não|
+|`uf`|UF a qual pertence o débito.|**string**|Não|
+|`placa`|Placa identificadora do veículo.|**string**|Não|
+|`renavam`|Renavam identificador do veículo.|**string**|Não|
+|`inscricaoImovel`|Numeração referente a identificação do imóvel junto a fazenda. | **string** |Não|
+|`numeroGuia`|Numero de identificação da guia de pagamento.|**string**|Não|
+|`numeroLancamento`|Numero de identificação do lançamento.|**string**|Não|
+|`numeroParcelamento`|Numero do parcelamento junto ao órgão.|**string**|Não|
+|`numeroCDA`|Numero de identificação da dívida junto ao governo.|**string**|Não|
+|`tipoDebito`|Numero de identificação do pagamento na adquirente.|**enum** (Array [7]) |Não|
 
 ## Operação: CotacaoDebito
 
