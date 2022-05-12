@@ -12,7 +12,7 @@
           url: "docs/operacoesAPI#api-fatura"
         - title: "API: Pagamento"
           url: "docs/operacoesAPI#api-pagamento"
-    - title: Códigos de retorno
+    - title: Códigos de retorno (Status HTTP)
       url: "docs/codigosRetorno"
 - title: Swagger
   external_url: https://api.parcelenahora.com.br/swagger/index.html

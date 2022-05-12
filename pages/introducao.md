@@ -40,7 +40,7 @@ Onde para se executar uma determinada operaçãoção é necessário seguir os s
 |**GET**|Método utilizado para solicitação de representação de um recurso específico. Utilizado para obtenção de dados existentes. Ex.: consultar status de uma transação.|
 |**POST**|Método utilizado para criação de um novo recurso. Utilizado para submeter uma entidade a um recurso específico. Ex.: realizar uma cotação|
 
-Nas operações realizadas em nossas API, todo e qualquer envio de requisição irá retornar um código de Status HTTP, indicando se a operação foi realizado com sucesso ou não.
+Nas operações realizadas em nossas API, todo e qualquer envio de requisição irá retornar um código de [Status HTTP]({{ site.baseurl }}/docs/codigosRetorno), indicando se a operação foi realizado com sucesso ou não.
 
 ## Glossário 
 
@@ -48,40 +48,40 @@ Para facilitar o entendimento da nossa API, listamos abaixo um pequeno glossári
 
 |Termo|Descrição|
 |---|---|
-|**Inscrição Imóvel**|Também conhecido como Inscrição do IPTU, é o identificador do estabelecimento/casa, junto ao cadastro imobiliário do município.|
 |**CDA**|É um título emitido pelo governo que comprova a dívida do contribuinte, seu número é utilizado para identificação de uma determinada dívida.|
 |**Holder Name**|É o nome do titular do cartão, o seu portador.|
-|**Security Code**|É o código de segurança do cartão (CVV), composto usualmente de 3 dígitos.|
-|**Valor Wynk**|É o valor referente ao desconto obtido pelo cliente a partir de sua pontuação junto a Wynk.|
+|**Inscrição Imóvel**|Também conhecido como Inscrição do IPTU, é o identificador do estabelecimento/casa, junto ao cadastro imobiliário do município.|
 |**Número de Lançamento**|?????????????????????.|
 |**Pedido**|É o número identificador da transação ou consulta, realizada pelo cliente, junto ao nosso sistema.|
+|**Security Code**|É o código de segurança do cartão (CVV), composto usualmente de 3 dígitos.|
+|**Taxas de serviço**|Valor cobrado pelos órgãos para realizações de pequenos seviços (emplacamento e etc).|
+|**Valor Wynk**|É o valor referente ao desconto obtido pelo cliente a partir de sua pontuação junto a Wynk.|
 
 ## UF's, Órgãos e débitos suportados
 
 A versão atual da API Parceiros possui suporte ás seguintes UF's, Órgãos e Débitos
 
-| UF      | Òrgãos            | Débitos retornados                  |
+| UF      | Órgãos            | Débitos retornados                  |
 |---------|-------------------|-------------------------------------|
-| MG      | DETRAN            | MULTAS                              |
-| DF      | DETRAN / SEEC     | MULTAS / LICENCIAMENTO / IPVA / IPTU / ITBI |
-| SE      | DETRAN / SEFAZ    | MULTAS / LICENCIAMENTO                               |
-| AL      | DETRAN            | Todos                               |
-| SP      | DETRAN / SEFAZ    | Todos                               |
-| ES      | DETRAN / SEFAZ    | Todos                               |
-| MA      | DETRAN            | Todos                               |
-| MS      | DETRAN / SEFAZ    | Todos                               |
-| RR      | DETRAN / SEFAZ    | Todos                               |
-| AM      | DETRAN / SEFAZ    | Todos                               |
-| RN      | DETRAN            | Todos                               |
-| GO      | DETRAN / SEFAZ    | Todos                               |
-| PI      | DETRAN / SEFAZ    | Todos                               |
-| MT      | DETRAN / SEFAZ    | Todos                               |
-| PR      | SEFAZ             | Todos                               |
-| PR      | DETRAN / SEFAZ    | Todos                               |
-| AP      | DETRAN / SEFAZ    | Todos                               |
-| RS      | DETRAN / SEFAZ    | Todos                               |
-| RO      | DETRAN / SEFAZ    | Todos                               |
-| TO      | DETRAN / SEFAZ    | Todos                               |
-| BA      | DETRAN / SEFAZ    | Todos                               |
-| RJ      | DETRAN / SEFAZ    | Todos                               |
+| `AL`      | `DETRAN        `    | `MULTAS / LICENCIAMENTO / TAXAS DE SERVIÇO`                                |
+| `AM`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO   `                           |
+| `AP`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
+| `BA`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
+| `DF`      | `DETRAN / SEEC `    | `MULTAS / LICENCIAMENTO / TAXAS DE SERVIÇO / IPVA / IPTU / ITBI` |
+| `ES`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / TAXAS DE SERVIÇO`                               |
+| `GO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO  `                              |
+| `MA`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
+| `MG`      | `DETRAN        `    | `APENAS MULTAS`                              |
+| `MS`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
+| `MT`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
+| `PI`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                 |
+| `PR`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
+| `RJ`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                               |
+| `RN`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO   `                               |
+| `RR`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
+| `SE`      | `DETRAN / SEFAZ`    | `MULTAS / LICENCIAMENTO`                               |
+| `SP`      | `DETRAN / SEFAZ`    | `MULTAS / LICENCIAMENTO / TAXAS DE SERVIÇO`                                |
+| `RO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                 |
+| `RS`      | `DETRAN / SEFAZ`    | `APENAS MULTAS `                              |
+| `TO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
 

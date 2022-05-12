@@ -3,7 +3,7 @@ title: Códigos de retorno API's
 description: Descrição dos códigos de retorno das API'S
 ---
 
-# Códigos de retorno API's
+# Códigos de retorno API's (STATUS HTTP)
 
 A tabela abaixo informa o significado dos códigos de retorno, de forma genérica, para todas as requisições executadas nas API'S.
 
