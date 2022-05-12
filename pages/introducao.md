@@ -28,7 +28,7 @@ O modelo utilizado na integração das nossas APIs é baseado na utilização de
 
 {% include alert.html type="info" title="URL base" content="http://api.parcelenahora.com.br/" %}
 
-Onde para se executar uma determinada operação é necessário seguir os seguintes passos:
+Onde para se executar uma determinada operaçãoção é necessário seguir os seguintes passos:
 
 1. Combinar a URL base do ambiente com o **_endpoint_** da operação desejada. Ex.: http://api.parcelenahora.com.br/**v1/v1-2/operacaoDesejada/**.
 2. Enviar a requisição para a URL combinada (base+operação desejada) utilizando o verbo (método) HTTP adequado à operação.
