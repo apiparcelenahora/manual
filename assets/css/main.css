@@ -18656,6 +18656,15 @@ article.get p code b {
     color: rgb(252 194 140);
 } 
 
+
+.img-fluid, .td-content img.schema{
+    max-width: 80%;
+    height: auto;
+    padding-left: 1em;
+    border: solid black 3px;
+    /* margin-left: 3em; */
+}
+
 /* .language-json.highlighter-rouge .highlight .highlight code .err{
     color: #89dca2;
 }  */

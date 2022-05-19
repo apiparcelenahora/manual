@@ -122,7 +122,7 @@ curl -X 'POST' \
 }
 ```
 
-**Descrição dos dados retornados:**
+### Descrição dos dados retornados:
 
 |Propriedade|Descrição|Tipo|
 |---|---|---|---|
@@ -135,11 +135,12 @@ curl -X 'POST' \
 |`codBarras`|Código de barras para pagamento da fatura. | **string** |
 |`descricao`|Descrição do débito a ser pago.|**string**|
 
-teste
 
 ### Schema
 
-![imagem](assets\imgs\retorno-consulta-debito-generic-result.png)
+<p><img src="assets\imgs\retorno-consulta-debito-generic-result.png" class="schema" alt="imagem"></p>
+
+<!-- ![imagem](assets\imgs\retorno-consulta-debito-generic-result.png) -->
 
 
 # API: CotacaoDebito
@@ -194,9 +195,9 @@ curl -X 'POST' \
 
 ```
 {
- "Pedido": 3453,
- "QtdParcelas": 2,
- "CodFaturas": [1,2,3,4]
+  "Pedido": 3453,
+  "QtdParcelas": 2,
+  "CodFaturas": [1,2,3,4]
 }
 ```
 
@@ -207,37 +208,46 @@ curl -X 'POST' \
   "success": true,
   "message": "string",
   "data": {
-    "pedido": 0,
-    "debitos": [
-      {
-        "codFatura": 0,
-        "codDebito": 0,
-        "codNsu": "string",
-        "vencimento": "string",
-        "valor": "string",
-        "codBarras": "string",
-        "exigivel": 0,
-        "descricao": "string"
-      }
-    ]
-  }
+    "erros": [
+      "string"
+    ],
+    "isValid": true,
+    "messagem": "string",
+    "codigoMessagem": 0,
+    "retorno": {
+      "principal": 0,
+      "simumacaoParcelas": [
+        {
+          "parcela": 0,
+          "valor": 0,
+          "tipoOperacao": "string",
+          "valorTotal": 0,
+          "cet": 0
+        }
+      ],
+      "valorTarifa": 0
+    },
+    "problemaDeInfraestrutura": true,
+    "warning": true,
+    "cd_cupom": 0
 }
 ```
 
-**Descrição dos dados retornados:**
+### Descrição dos dados retornados:
 
 |Propriedade|Descrição|Tipo|
 |---|---|---|---|
-|`pedido`|Número identificador do pedido/consulta.|**integer (int32)**|
-|`codFatura`|Código da fatura para pagamento do débito.|**integer (int32)**|
-|`codDebito`|Código identificador do débito.|**integer (int32)**|
-|`codNsu`|Número sequencial único para identificar a transação.|**string**|
-|`vencimento`|Data de vencimento para pagamento do débito.|**string**|
-|`valor`| Valor do débito.|**string**|
-|`codBarras`|Código de barras para pagamento da fatura. | **string** |
-|`descricao`|Descrição do débito a ser pago.|**string**|
+|`parcela`|Quantidade de parcelas selecionadas.|**integer (int32)**|
+|`valor`|Valor da parcela.|**number (double)**|
+<!-- |`tipoOperacao`|Código identificador do débito.|**string**| -->
+|`valorTotal`|Número sequencial único para identificar a transação.|**number (double)**|
+|`cet`|Custo efetivo total.|**number (double)**|
+<!-- |`valorTarifa`|Data de vencimento para pagamento do débito.|**number (double)**| -->
 
 
+### Schema
+
+<p><img src="assets\imgs\retorno-simulacao-generic-result.png" class="schema" alt="imagem"></p>
 
 # API: Fatura
 
@@ -298,6 +308,35 @@ curl -X 'POST' \
   "DataLiquidacao": "2022-04-29"
 }
 ```
+
+## Resposta da requisição - AtualizarLiquidacao
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "cod_Fat": 0,
+    "autenticacao": "string",
+    "bancoLiquidacao": "string",
+    "dataLiquidacao": "2022-05-19T18:22:02.989Z"
+  }
+}
+```
+
+### Descrição dos dados retornados:
+
+|Propriedade|Descrição|Tipo|
+|---|---|---|---|
+|`cod_Fat`|Identificador da fatura liquidada.|**integer (int32)**|
+|`autenticacao`|Código comprovante da liquidação do boleto junto ao banco.|**string**|
+|`bancoLiquidacao`|Nome do banco o qual foi realizada a liquidação.|**string**|
+|`dataLiquidacao`|Data que ocorreu a liquidação .|**string (date-time)**|
+
+
+### Schema
+
+<p><img src="assets\imgs\fatura-liquidada-model-generic-result.png" class="schema" alt="imagem"></p>
 
 # API: Pagamento
 
@@ -363,20 +402,20 @@ curl -X 'POST' \
 
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
-|`cdFaturas`|Numeração identificadora da fatura.|**Array de string's**|Não|
-|`parcelas`|Numeração referente a quantidade de parcelas selecionadas para pagamento.|**string**|Não|
-|`valorPagCartao`|Valor pago pelo cliente ao final de sua cotação (valor total).|**string**|Não|
-|`valorWynk`|Valor pago pelo cliente a partir da Wynk.|**string**|Não|
-|`email`|Endereço de e-mail para cobrança do cartão do cliente. | **string** |Não|
-|`celular`|Número de telefone(celular) do cliente.|**string**|Não|
-|`securityCode`|Código de segurança do cartão do cliente.|**string**|Não|
-|`creditCardNumber`|Numeração do cartão do cliente.|**string**|Não|
-|`monthYear`|Mês e ano do vencimento do cartão do cliente.|**string**|Não|
-|`holderName`|Nome do portador do cartão.|**string**|Não|
-|`cpfcnpj`|CPF ou CNPJ do portado do cartão.|**string**|Não|
-|`telefone`|Número de telefone do cliente.|**string**|Não|
+|`cdFaturas`|Numeração identificadora da fatura.|**Array de string's**|Sim|
+|`parcelas`|Numeração referente a quantidade de parcelas selecionadas para pagamento.|**string**|Sim|
+|`valorPagCartao`|Valor pago pelo cliente ao final de sua cotação (valor total).|**string**|Sim|
+|`valorWynk`|Valor pago pelo cliente a partir da Wynk.|**string**|Sim|
+|`email`|Endereço de e-mail para cobrança do cartão do cliente. | **string** |Sim|
+|`celular`|Número de telefone(celular) do cliente.|**string**|Sim|
+|`securityCode`|Código de segurança do cartão do cliente.|**string**|Sim|
+|`creditCardNumber`|Numeração do cartão do cliente.|**string**|Sim|
+|`monthYear`|Mês e ano do vencimento do cartão do cliente.|**string**|Sim|
+|`holderName`|Nome do portador do cartão.|**string**|Sim|
+|`cpfcnpj`|CPF ou CNPJ do portado do cartão.|**string**|Sim|
+|`telefone`|Número de telefone do cliente.|**string**|Sim|
 
-## Exemplo de aplicação da requisição - Pagamento
+### Exemplo de aplicação da requisição - Pagamento
 
 ```
 {
@@ -394,6 +433,35 @@ curl -X 'POST' \
  "telefone": "61899234864",
 }
 ```
+
+### Resposta da requisição - Pagamento
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "mensagem": "string",
+    "pedido": 0,
+    "transacao": 0,
+    "transacaoWynk": 0
+  }
+}
+```
+
+#### Descrição dos dados retornados:
+
+|Propriedade|Descrição|Tipo|
+|---|---|---|---|
+<!-- |`mensagem`|Identificador da fatura liquidada.|**string**| -->
+|`pedido`|Código identificador do pedido.|**integer (int32)**|
+|`transacao`|Código identificador da transação.|**integer (int32)**|
+|`transacaoWynk`|Código identificador da transação Wynk .|**integer(int32)**|
+
+
+#### Schema
+
+<p><img src="assets\imgs\pagamento-generic-result.png" class="schema" alt="imagem"></p>
 
 ## Requisição GET - ConsultarStatusPedido
 
@@ -431,7 +499,54 @@ https://api.parcelenahora.com.br/api/v2/Pagamento/ConsultarStatusPedido
 
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
-|`CodigoPedido`|Numeração identificadora do pedido.|**integer (int32)**|Não|
+|`CodigoPedido`|Numeração identificadora do pedido.|**integer (int32)**|Sim|
+
+### Resposta da requisição - ConsultarStatusPedido
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "cdFaturas": [
+      "string"
+    ],
+    "parcelas": "string",
+    "valorPagCartao": "string",
+    "valorWynk": "string",
+    "email": "string",
+    "celular": "string",
+    "securityCode": "string",
+    "creditCardNumber": "string",
+    "monthYear": "string",
+    "holderName": "string",
+    "cpfcnpj": "string",
+    "telefone": "string"
+  }
+}
+```
+
+#### Descrição dos dados retornados:
+
+|Propriedade|Descrição|Tipo|
+|---|---|---|
+|`cdFaturas`|Numeração identificadora da fatura.|**Array de string's**|
+|`parcelas`|Numeração referente a quantidade de parcelas selecionadas para pagamento.|**string**|
+|`valorPagCartao`|Valor pago pelo cliente ao final de sua cotação (valor total).|**string**|
+|`valorWynk`|Valor pago pelo cliente a partir da Wynk.|**string**|
+|`email`|Endereço de e-mail para cobrança do cartão do cliente. | **string** |
+|`celular`|Número de telefone(celular) do cliente.|**string**|
+|`securityCode`|Código de segurança do cartão do cliente.|**string**|
+|`creditCardNumber`|Numeração do cartão do cliente.|**string**|
+|`monthYear`|Mês e ano do vencimento do cartão do cliente.|**string**|
+|`holderName`|Nome do portador do cartão.|**string**|
+|`cpfcnpj`|CPF ou CNPJ do portado do cartão.|**string**|
+|`telefone`|Número de telefone do cliente.|**string**|
+
+
+#### Schema
+
+<p><img src="assets\imgs\pagamento-debito-model-generic-result.png" class="schema" alt="imagem"></p>
 
 ## Requisição GET - BuscarCodBarraFatura
 
@@ -469,4 +584,6 @@ https://api.parcelenahora.com.br/api/v2/Pagamento/BuscarCodBarraFatura?CodigoFat
 
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
-|`CodigoFatura`|Numeração identificadora da fatura.|**integer (int32)**|Não|
+|`CodigoFatura`|Numeração identificadora da fatura.|**integer (int32)**|Sim|
+
+
