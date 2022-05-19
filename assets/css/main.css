@@ -18652,6 +18652,10 @@ article.get p code b {
     color: #b44233;
 } 
 
+.language-json.highlighter-rouge .highlight .highlight code .kc{
+    color: rgb(252 194 140);
+} 
+
 /* .language-json.highlighter-rouge .highlight .highlight code .err{
     color: #89dca2;
 }  */

@@ -9,7 +9,7 @@ Conforme orientação apresentada em [Arquitetura da Integração]({{ site.baseu
 
 # API: ConsultarDebito
 
-A API consultar débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país. É a partir dessa API que os dados dos veículos, imóveis e etc.. são enviados para que se seja identificado os débitos do veículo/imóvel.
+A API consultar débitos, tem como objetivo realizar a consulta nos principais órgãos públicos do país. É a partir dessa API que os dados dos veículos, imóveis e etc.. são enviados para que se seja identificado os débitos do veículo/imóvel. Obtendo-se como resposta, os débitos e suas principais descrições.
 
 Está API opera com uma requisição POST, formada por 10 campos.
 
@@ -34,57 +34,113 @@ Está API opera com uma requisição POST, formada por 10 campos.
   "uf": "string",
   "placa": "string",
   "renavam": "string",
+  "iduser": 0,
   "inscricaoImovel": "string",
   "numeroGuia": "string",
   "numeroLancamento": "string",
   "numeroParcelamento": "string",
   "numeroCDA": "string",
-  "tipoDebito": 0
+  "tipoDebito": 0,
+  "email": "string",
+  "telefone": "string"
 }
 ```
 2. CURL
 ```json
 curl -X 'POST' \
   'https://api.parcelenahora.com.br/api/v2/ConsultaDebito' \
-  -H 'accept: */*' \
+  -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
   "cpf": "string",
   "uf": "string",
   "placa": "string",
   "renavam": "string",
+  "iduser": 0,
   "inscricaoImovel": "string",
   "numeroGuia": "string",
   "numeroLancamento": "string",
   "numeroParcelamento": "string",
   "numeroCDA": "string",
-  "tipoDebito": 0
+  "tipoDebito": 0,
+  "email": "string",
+  "telefone": "string"
 }'
 ```
 
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
-|`cpf`|Cpf do titular do débito.|**string**|Não|
-|`uf`|UF a qual pertence o débito.|**string**|Não|
-|`placa`|Placa identificadora do veículo.|**string**|Não|
-|`renavam`|Renavam identificador do veículo.|**string**|Não|
+|`cpf`|Cpf do titular do débito.|**string**|Sim|
+|`uf`|UF a qual pertence o débito.|**string**|Sim|
+|`placa`|Placa identificadora do veículo.|**string**|Sim|
+|`renavam`|Renavam identificador do veículo.|**string**|Sim|
+|`iduser`| ID identificador do usuário.|**integer (int32)**|Não|
 |`inscricaoImovel`|Numeração referente a identificação do imóvel junto a fazenda. | **string** |Não|
 |`numeroGuia`|Número de identificação da guia de pagamento.|**string**|Não|
 |`numeroLancamento`|Número de identificação do lançamento.|**string**|Não|
 |`numeroParcelamento`|Número do parcelamento junto ao órgão.|**string**|Não|
 |`numeroCDA`|Número de identificação da dívida junto ao governo.|**string**|Não|
-|`tipoDebito`|Número de identificação do pagamento na adquirente.|**enum** (Array [7]) |Sim|
+|`tipoDebito`|Número de identificação do pagamento na adquirente.|**enum** (Array [7]) |Não|
+|`email`|Email válido de contato, do portador do cartão.|**string**|Sim|
+|`telefone`|Número de telefone válido de contato, do portador do cartão.|**string**|Sim|
 
 ## Exemplo de aplicação da requisição - ConsultaDebito
 
 ```
  {
-  "Cpf": "00000000000",
-  "Uf": "GO",
-  "Placa": "jkt3433",
-  "Renavam": "928392818"
+  "cpf": "12345678901",
+  "uf": "DF",
+  "placa": "AAA0123",
+  "renavam": "12345678901",
+  "inscricaoImovel": "",  
+  "telefone":"61123456789",
+  "email":"exemplo@exemplo.com"
 }
 ```
+
+## Resposta da requisição - ConsultaDebito
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "pedido": 0,
+    "debitos": [
+      {
+        "codFatura": 0,
+        "codDebito": 0,
+        "codNsu": "string",
+        "vencimento": "string",
+        "valor": "string",
+        "codBarras": "string",
+        "exigivel": 0,
+        "descricao": "string"
+      }
+    ]
+  }
+}
+```
+
+**Descrição dos dados retornados:**
+
+|Propriedade|Descrição|Tipo|
+|---|---|---|---|
+|`pedido`|Número identificador do pedido/consulta.|**integer (int32)**|
+|`codFatura`|Código da fatura para pagamento do débito.|**integer (int32)**|
+|`codDebito`|Código identificador do débito.|**integer (int32)**|
+|`codNsu`|Número sequencial único para identificar a transação.|**string**|
+|`vencimento`|Data de vencimento para pagamento do débito.|**string**|
+|`valor`| Valor do débito.|**string**|
+|`codBarras`|Código de barras para pagamento da fatura. | **string** |
+|`descricao`|Descrição do débito a ser pago.|**string**|
+
+teste
+
+### Schema
+
+![imagem](assets\imgs\retorno-consulta-debito-generic-result.png)
+
 
 # API: CotacaoDebito
 
@@ -132,7 +188,7 @@ curl -X 'POST' \
 |---|---|---|---|
 |`pedido`|Número de identificação do pedido.|**integer (int32)**|Sim|
 |`qtdParcelas`|Numeração referente a quantidade de parcelas selecionadas para pagamento.|**integer (int32)**|Sim|
-|`codFaturas`|Número de identificação da fatura, pertencente ao pedido.|**Array de integers (int32)**|Não|
+|`codFaturas`|Número de identificação da fatura, pertencente ao pedido.|**Array de integers (int32)**|Sim|
 
 ## Exemplo de aplicação da requisição - CotacaoDebito
 
@@ -143,6 +199,45 @@ curl -X 'POST' \
  "CodFaturas": [1,2,3,4]
 }
 ```
+
+## Resposta da requisição - CotacaoDebito
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "pedido": 0,
+    "debitos": [
+      {
+        "codFatura": 0,
+        "codDebito": 0,
+        "codNsu": "string",
+        "vencimento": "string",
+        "valor": "string",
+        "codBarras": "string",
+        "exigivel": 0,
+        "descricao": "string"
+      }
+    ]
+  }
+}
+```
+
+**Descrição dos dados retornados:**
+
+|Propriedade|Descrição|Tipo|
+|---|---|---|---|
+|`pedido`|Número identificador do pedido/consulta.|**integer (int32)**|
+|`codFatura`|Código da fatura para pagamento do débito.|**integer (int32)**|
+|`codDebito`|Código identificador do débito.|**integer (int32)**|
+|`codNsu`|Número sequencial único para identificar a transação.|**string**|
+|`vencimento`|Data de vencimento para pagamento do débito.|**string**|
+|`valor`| Valor do débito.|**string**|
+|`codBarras`|Código de barras para pagamento da fatura. | **string** |
+|`descricao`|Descrição do débito a ser pago.|**string**|
+
+
 
 # API: Fatura
 
