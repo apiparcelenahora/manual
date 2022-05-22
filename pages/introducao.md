@@ -51,7 +51,6 @@ Para facilitar o entendimento da nossa API, listamos abaixo um pequeno glossári
 |**CDA**|É um título emitido pelo governo que comprova a dívida do contribuinte, seu número é utilizado para identificação de uma determinada dívida.|
 |**Holder Name**|É o nome do titular do cartão, o seu portador.|
 |**Inscrição Imóvel**|Também conhecido como Inscrição do IPTU, é o identificador do estabelecimento/casa, junto ao cadastro imobiliário do município.|
-|**Número de Lançamento**|?????????????????????.|
 |**Pedido**|É o número identificador da transação ou consulta, realizada pelo cliente, junto ao nosso sistema.|
 |**Security Code**|É o código de segurança do cartão (CVV), composto usualmente de 3 dígitos.|
 |**Taxas de serviço**|Valor cobrado pelos órgãos para realizações de pequenos seviços (emplacamento e etc).|
