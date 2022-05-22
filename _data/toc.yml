@@ -15,6 +15,6 @@
     - title: Códigos de retorno (Status HTTP)
       url: "docs/codigosRetorno"
 - title: Swagger
-  external_url: https://api.parcelenahora.com.br/swagger/index.html
+  external_url: https://api.parcelenahora.com.br/swagger/index.html?urls.primaryName=V2
 
 
