@@ -142,6 +142,10 @@ curl -X 'POST' \
 
 <!-- ![imagem](assets\imgs\retorno-consulta-debito-generic-result.png) -->
 
+# API: ConsultaPlaca
+
+*Em construção* - Disponível já no swagger.
+
 
 # API: CotacaoDebito
 
@@ -587,3 +591,6 @@ https://api.parcelenahora.com.br/api/v2/Pagamento/BuscarCodBarraFatura?CodigoFat
 |`CodigoFatura`|Numeração identificadora da fatura.|**integer (int32)**|Sim|
 
 
+# API: Recibo
+
+*Em construção* - Disponível já no swagger.
