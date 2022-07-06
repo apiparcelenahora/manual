@@ -6,6 +6,8 @@
       children:
         - title: "API: ConsultarDebito"
           url: "docs/operacoesAPI#api-consultardebito"
+        - title: "API: ConsultaPlaca"
+          url: "docs/operacoesAPI#api-consultaplaca"
         - title: "API: CotacaoDebito"
           url: "docs/operacoesAPI#api-cotacaodebito"
         - title: "API: Fatura"

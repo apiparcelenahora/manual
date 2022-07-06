@@ -144,8 +144,97 @@ curl -X 'POST' \
 
 # API: ConsultaPlaca
 
-*Em construção* - Disponível já no swagger.
+A API consulta placa, tem como objetivo consultar a existência de registro para placa informada pelo usuário. Em caso positivo, a API retorna os dados do veículo pertencente a placa. A partir desses dados, será possível realizar a consulta de débitos para o veículo, sem que o usuário precise inserir outras informações, além da placa.
 
+Está API opera com uma requisição POST, formada por 1 campo.
+
+## Requisição POST - ConsultaPlaca
+
+<section id="operacao">
+<article class="post">
+        <p>
+        <code>
+            <b>POST</b> /api/v2/ConsultaPlaca
+        </code> Método de consulta por Placa </p>
+</article>
+</section>
+
+## Corpo da requisição - ConsultaPlaca
+
+1. JSON
+```json
+{
+  "placa": "string"
+}
+```
+2. CURL
+```json
+curl -X 'POST' \
+  'https://api.parcelenahora.com.br/api/v2/ConsultaPlaca' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "placa": "string"
+}'
+```
+
+|Propriedade|Descrição|Tipo|Obrigatório|
+|---|---|---|---|
+|`placa`|Placa identificadora do veículo.|**string**|Sim|
+
+## Exemplo de aplicação da requisição - ConsultaPlaca
+
+```
+{
+  "PLACA": "jkt3433"
+}
+```
+
+## Resposta da requisição - ConsultaPlaca
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "solitacao": {
+      "dado": "string",
+      "numeroresposta": "string",
+      "tempo": "string",
+      "mensagem": "string",
+      "horario": "string"
+    },
+    "resposta": {
+      "placa": "string",
+      "chassi": "string",
+      "renavam": "string",
+      "marcaModelo": "string",
+      "ano_fabricacao": "string",
+      "anoModelo": "string",
+      "cor": "string",
+      "combustivel": "string",
+      "uf": "string"
+    }
+  }
+}
+```
+### Descrição dos dados retornados:
+
+|Propriedade|Descrição|Tipo|
+|---|---|---|---|
+|`placa`|Placa identificadora do veículo.|**string**|
+|`chassi`|Numeração identificadora do chassi do veículo.|**string**|
+|`renavam`|Renavam identificador do veículo.|**string**|
+|`marcaModelo`|Modelo e marca do veículo.|**string**|
+|`ano_fabricacao`|Ano de fabricação do veículo.|**string**|
+|`anoModelo`|Ano do modelo do veículo.|**string**|
+|`cor`|Cor original do veículo.|**string**|
+|`combustivel`|Tipo de combustível utilizado no veículo.|**string**|
+|`uf`|UF a qual pertence o veículo (varia de acordo com as transferências de UF).|**string**|
+
+### Schema
+
+<p><img src="assets\imgs\retorno-placa-generic-result.png" class="schema" alt="imagem"></p>
 
 # API: CotacaoDebito
 
@@ -242,11 +331,10 @@ curl -X 'POST' \
 |Propriedade|Descrição|Tipo|
 |---|---|---|---|
 |`parcela`|Quantidade de parcelas selecionadas.|**integer (int32)**|
-|`valor`|Valor da parcela.|**number (double)**|
-<!-- |`tipoOperacao`|Código identificador do débito.|**string**| -->
-|`valorTotal`|Número sequencial único para identificar a transação.|**number (double)**|
-|`cet`|Custo efetivo total.|**number (double)**|
-<!-- |`valorTarifa`|Data de vencimento para pagamento do débito.|**number (double)**| -->
+|`valor`|Valor da parcela.|**string**|
+|`valorTotal`|Número sequencial único para identificar a transação.|**string**|
+|`cet`|Custo efetivo total.|**string**|
+
 
 
 ### Schema
