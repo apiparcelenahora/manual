@@ -68,6 +68,8 @@ curl -X 'POST' \
 }'
 ```
 
+#### Descrição dos dados enviados como parâmetro:
+
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
 |`cpf`|Cpf do titular do débito.|**string**|Sim|
@@ -177,6 +179,8 @@ curl -X 'POST' \
   "placa": "string"
 }'
 ```
+
+#### Descrição dos dados enviados como parâmetro:
 
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
@@ -383,6 +387,8 @@ curl -X 'POST' \
 }'
 ```
 
+#### Descrição dos dados enviados como parâmetro:
+
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
 |`cod_Fat`|Número de identificação da fatura (código).|**integer (int32)**|Sim|
@@ -492,6 +498,8 @@ curl -X 'POST' \
 }'
 ```
 
+#### Descrição dos dados enviados como parâmetro:
+
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
 |`cdFaturas`|Numeração identificadora da fatura.|**Array de string's**|Sim|
@@ -545,7 +553,6 @@ curl -X 'POST' \
 
 |Propriedade|Descrição|Tipo|
 |---|---|---|---|
-<!-- |`mensagem`|Identificador da fatura liquidada.|**string**| -->
 |`pedido`|Código identificador do pedido.|**integer (int32)**|
 |`transacao`|Código identificador da transação.|**integer (int32)**|
 |`transacaoWynk`|Código identificador da transação Wynk .|**integer(int32)**|
@@ -674,6 +681,8 @@ https://api.parcelenahora.com.br/api/v2/Pagamento/BuscarCodBarraFatura?CodigoFat
 }
 ```
 
+#### Descrição dos dados enviados como parâmetro:
+
 |Propriedade|Descrição|Tipo|Obrigatório|
 |---|---|---|---|
 |`CodigoFatura`|Numeração identificadora da fatura.|**integer (int32)**|Sim|
@@ -681,4 +690,217 @@ https://api.parcelenahora.com.br/api/v2/Pagamento/BuscarCodBarraFatura?CodigoFat
 
 # API: Recibo
 
-*Em construção* - Disponível já no swagger.
+A API recibo, trabalha com 2 requisições,possuindo como objetivo gerar o recibo de pagamento, do pedido efetuado pelo cliente. É a partir dessa operação que os dados referentes ao cliente, bem como os dados de pagamento do cartão e os débitos parcelados são reunidos para apresentação de um recibo único ao cliente.
+
+## Requisição GET - ReciboPedido
+
+Está requisição é formada por 1 campo. A principal diferença dessa requisição para a requisição de recibo por faturas está no fato dela retornar os dados do portador do cartão, como: telefone, e-mail e cpf, por exemplo. Uma visão geral do pedido feito.
+
+<section id="operacao">
+<article class="get">
+        <p>
+        <code>
+            <b>GET</b> /api/v2/Recibo/ReciboPedido
+        </code> Método consulta Recibo por Pedido </p>
+</article>
+</section>
+
+### Exemplo da requisição - ReciboPedido
+
+1. Curl
+```
+curl -X 'GET' \
+  'https://api.parcelenahora.com.br/api/v2/Recibo/ReciboPedido=2' \
+  -H 'accept: application/json'
+```
+
+2. Request URL
+```
+https://api.parcelenahora.com.br/api/v2/Recibo/ReciboPedido=2
+```
+
+3. JSON
+```
+{
+  "COD_PEDIDO": "2"
+}
+```
+
+#### Descrição dos dados enviados como parâmetro:
+
+|Propriedade|Descrição|Tipo|Obrigatório|
+|---|---|---|---|
+|`COD_PEDIDO`|Numeração identificadora do pedido.|**string**|Sim|
+
+
+### Resposta da requisição - ReciboPedido
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "comPedido": [
+      {
+        "cdped": "string",
+        "dtped": "string",
+        "cdddochavests": "string",
+        "dstelefone": "string",
+        "dsemail": "string",
+        "dscpfcnpj": "string",
+        "nrvalorfat": "string",
+        "nrvalortotal": "string",
+        "qtparcela": "string",
+        "nrvalorparcela": "string",
+        "nrvalortaxa": "string",
+        "dsplaca": "string",
+        "dsrenavam": "string",
+        "dscpfcnpjprop": "string",
+        "dsmarcamodelo": "string",
+        "dscor": "string",
+        "dsnomeprop": "string",
+        "dsempresauf": "string",
+        "cdusuario": "string",
+        "dsterminalpdv": "string",
+        "dspagamentoguid": "string",
+        "nrvalorfacilitadora": "string",
+        "cdemp": "string",
+        "dsanomodelo": "string",
+        "dschassi": "string",
+        "nrvalretcredtotal": "string",
+        "cdempret": "string",
+        "cdter": "string",
+        "nrvalcustoadqtotal": "string",
+        "nrperctaxa": "string",
+        "qtcartoes": "string",
+        "nrvalcomissaovendedor": "string",
+        "nrperccomissaovendedor": "string",
+        "nrpercretcredenciado": "string",
+        "nrperccustoadquirencia": "string",
+        "nrvallucroliquido": "string",
+        "nrvalimposto": "string",
+        "cdempadq": "string",
+        "dsiporigem": "string",
+        "cdusupedalteracao": "string",
+        "dtpedalteracao": "string",
+        "dsjustificativa": "string",
+        "cdddochavecanal": "string",
+        "cdempsubadq": "string",
+        "cdcupom": "string",
+        "comdetdominReference": "string",
+        "comempresaReference": "string",
+        "comempresA1Reference": "string",
+        "comcupomdescontoReference": "string",
+        "comempresA2Reference": "string",
+        "xmlns": "string",
+        "text": "string"
+      }
+    ]
+  }
+}
+```
+
+## Requisição GET - ReciboFaturaPagasPedido
+
+Está requisição é formada por 1 campo. E difere da requisição do recibo por pedido, dado seu retorno visar as faturas que foram pagas no pedido. 
+
+<section id="operacao">
+<article class="get">
+        <p>
+        <code>
+            <b>GET</b> /api/v2/Recibo/ReciboFaturaPagasPedido
+        </code> Método de consulta recibo Faturas Pagas Por Pedido </p>
+</article>
+</section>
+
+### Exemplo da requisição - ReciboFaturaPagasPedido
+
+1. Curl
+```
+curl -X 'GET' \
+  'https://api.parcelenahora.com.br/api/v2/Recibo/ReciboFaturaPagasPedido?CodigoPedido=2' \
+  -H 'accept: application/json'
+```
+
+2. Request URL
+```
+https://api.parcelenahora.com.br/api/v2/Recibo/ReciboFaturaPagasPedido?CodigoPedido=2
+```
+
+3. JSON
+```
+{
+  "COD_PEDIDO": "2"
+}
+```
+
+#### Descrição dos dados enviados como parâmetro:
+
+|Propriedade|Descrição|Tipo|Obrigatório|
+|---|---|---|---|
+|`COD_PEDIDO`|Numeração identificadora do pedido.|**string**|Sim|
+
+
+### Resposta da requisição - ReciboFaturaPagasPedido
+
+```json
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "confatura": [
+      {
+        "cdfat": "string",
+        "cdped": "string",
+        "dtfat": "string",
+        "dsrenavam": "string",
+        "dsplaca": "string",
+        "dsdescricao": "string",
+        "nrvalor": "string",
+        "dsidentificador": "string",
+        "cdddochavests": "string",
+        "dsindentdetran": "string",
+        "dsautoinfracao": "string",
+        "dsanolicenciamento": "string",
+        "dtvencimento": "string",
+        "nrvalormulta": "string",
+        "nrvalormora": "string",
+        "nrvaloroutros": "string",
+        "nrvalorpago": "string",
+        "nrvalordevido": "string",
+        "nrvalortotal": "string",
+        "dtdata": "string",
+        "nrvalorservico": "string",
+        "dsquantidade": "string",
+        "dtparcelamento": "string",
+        "nrqtdparcela": "string",
+        "nrvalorparcelamento": "string",
+        "nrnumparcela": "string",
+        "dsorgao": "string",
+        "dscodinfracao": "string",
+        "nrvalordesconto": "string",
+        "nrvalorcorrecao": "string",
+        "cdddochavetipo": "string",
+        "nrvalordebito": "string",
+        "dscodbarras": "string",
+        "dtvalidade": "string",
+        "dslinhaarq": "string",
+        "nrvalortaxa": "string",
+        "dtliquidacao": "string",
+        "dsbancoliquidacao": "string",
+        "dsautenticacao": "string",
+        "nrvalorfacilitadora": "string",
+        "dslinhadigitavel": "string",
+        "dsretornoapi": "string",
+        "nrvalretcredenciado": "string",
+        "cdusufatalteracao": "string",
+        "dtfatalteracao": "string",
+        "cdrec": "string",
+        "comdetdominReference": "string",
+        "comdetdomiN1Reference": "string",
+        "compedidoReference": "string"
+      }
+    ]
+  }
+}
+```

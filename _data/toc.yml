@@ -14,6 +14,8 @@
           url: "docs/operacoesAPI#api-fatura"
         - title: "API: Pagamento"
           url: "docs/operacoesAPI#api-pagamento"
+        - title: "API: Recibo"
+          url: "docs/operacoesAPI#api-recibo"
     - title: Códigos de retorno (Status HTTP)
       url: "docs/codigosRetorno"
 - title: Swagger
