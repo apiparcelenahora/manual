@@ -264,21 +264,23 @@ Está API opera com uma requisição POST, formada por 3 campos.
 {
   "pedido": 0,
   "qtdParcelas": 0,
-  "codFaturas": [0]
+  "codFaturas": [0],
+  "cBandeira":3
 }
 ```
 2. CURL
 ```json
 curl -X 'POST' \
   'https://api.parcelenahora.com.br/api/v2/CotacaoDebito' \
-  -H 'accept: */*' \
+  -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "pedido": 1000,
-  "qtdParcelas": 2,
+  "pedido": 0,
+  "qtdParcelas": 0,
   "codFaturas": [
     0
-  ]
+  ],
+  "cBandeira": 3
 }'
 ```
 
@@ -287,6 +289,16 @@ curl -X 'POST' \
 |`pedido`|Número de identificação do pedido.|**integer (int32)**|Sim|
 |`qtdParcelas`|Numeração referente a quantidade de parcelas selecionadas para pagamento.|**integer (int32)**|Sim|
 |`codFaturas`|Número de identificação da fatura, pertencente ao pedido.|**Array de integers (int32)**|Sim|
+|`cBandeira`|Identificador da bandeira, pertencente ao cartão utilizado na cotação.|**integer (int32)**|Não|
+
+**OBS:** O parâmetro [cBandeira], embora seja opcional, deve sempre que possível ser preenchido. Caso o mesmo não seja, a API irá fornecer apenas as parcelas no intervalo de 1 a 12x. Atualmente, é possível alcançar um maior número de parcelas a depender da bandeira utilizada. Os valores atribúidos a esse parâmetro, devem seguir a tabela abaixo:
+
+|cBandeira (valor)|Bandeira|Intervalo de Parcelas Retornadas|
+|:----:|:----:|:----:|
+|`3`| Visa | 1x a 24x|
+|`2`| Mastercard| 1x a 21x|
+|`1`| Todas as demas (default)| 1x a 12x|
+
 
 ## Exemplo de aplicação da requisição - CotacaoDebito
 
