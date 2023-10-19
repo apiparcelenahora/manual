@@ -70,7 +70,7 @@ A versão atual da API Parceiros possui suporte ás seguintes UF's, Órgãos e D
 | `ES`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / TAXAS DE SERVIÇO`                               |
 | `GO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO  `                              |
 | `MA`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
-| `MG`      | `DETRAN        `    | `APENAS MULTAS`                              |
+| `MG`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                            |
 | `MS`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
 | `MT`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
 | `PI`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                 |
