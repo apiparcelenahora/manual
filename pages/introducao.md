@@ -12,7 +12,7 @@ Para executar as operações da nossa API Parceiros, é necessário o uso do nos
 
 Caso você já possua cadastro, você deverá usar seu login e e-mail para geração do **TOKEN** de acesso, utilizando o verbo HTTP **POST** junto ao nosso endpoint, conforme exemplo abaixo:
 
-{% include alert.html type="info" title="Endereço endpoint" content="http://api.parcelenahora.com.br/login/v1/login" %}
+{% include alert.html type="info" title="Endereço endpoint" content="https://api.parcelenahora.com.br/login/v1/login" %}
 
 ```
 ---
@@ -26,11 +26,11 @@ Caso você já possua cadastro, você deverá usar seu login e e-mail para gera�
 
 O modelo utilizado na integração das nossas APIs é baseado na utilização de uma única URL:
 
-{% include alert.html type="info" title="URL base" content="http://api.parcelenahora.com.br/" %}
+{% include alert.html type="info" title="URL base" content="https://api.parcelenahora.com.br/" %}
 
 Onde para se executar uma determinada operaçãoção é necessário seguir os seguintes passos:
 
-1. Combinar a URL base do ambiente com o **_endpoint_** da operação desejada. Ex.: http://api.parcelenahora.com.br/**v1/v1-2/operacaoDesejada/**.
+1. Combinar a URL base do ambiente com o **_endpoint_** da operação desejada. Ex.: https://api.parcelenahora.com.br/**v1/v1-2/operacaoDesejada/**.
 2. Enviar a requisição para a URL combinada (base+operação desejada) utilizando o verbo (método) HTTP adequado à operação.
 
 ### Exemplos de verbos (métodos) HTML
