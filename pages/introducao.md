@@ -62,25 +62,30 @@ A versão atual da API Parceiros possui suporte ás seguintes UF's, Órgãos e D
 
 | UF      | Órgãos            | Débitos retornados                  |
 |---------|-------------------|-------------------------------------|
-| `AL`      | `DETRAN        `    | `MULTAS / LICENCIAMENTO / TAXAS DE SERVIÇO`                                |
-| `AM`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO   `                           |
-| `AP`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
-| `BA`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
-| `DF`      | `DETRAN / SEEC `    | `MULTAS / LICENCIAMENTO / TAXAS DE SERVIÇO / IPVA / IPTU / ITBI` |
-| `ES`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / TAXAS DE SERVIÇO`                               |
-| `GO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO  `                              |
-| `MA`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
-| `MG`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                             |
-| `MS`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
-| `MT`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
-| `PI`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                 |
-| `PR`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                                  |
-| `RJ`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO`                               |
-| `RN`      | `DETRAN        `    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO   `                               |
-| `RR`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
-| `SE`      | `DETRAN / SEFAZ`    | `MULTAS / LICENCIAMENTO`                               |
-| `SP`      | `DETRAN / SEFAZ`    | `MULTAS / LICENCIAMENTO / TAXAS DE SERVIÇO`                                |
-| `RO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                 |
-| `RS`      | `DETRAN / SEFAZ`    | `APENAS MULTAS `                              |
-| `TO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA/ LICENCIAMENTO / TAXAS DE SERVIÇO `                                |
+| `AC`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `AL`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                 |
+| `AM`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                            |
+| `AP`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                  |
+| `BA`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                  |
+| `CE`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                  |
+| `DF`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO / IPTU` |
+| `ES`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                               |
+| `GO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                              |
+| `MA`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                  |
+| `MG`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                             |
+| `MS`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `MT`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                  |
+| `PA`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `PB`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `PE`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `PI`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                 |
+| `PR`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                  |
+| `RJ`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                               |
+| `RN`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                               |
+| `RO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                               |
+| `RR`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `RS`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                               |
+| `SC`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                               |
+| `SP`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
+| `TO`      | `DETRAN / SEFAZ`    | `MULTAS / IPVA / LICENCIAMENTO`                                |
 
