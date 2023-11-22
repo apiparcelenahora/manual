@@ -529,9 +529,9 @@ curl -X 'POST' \
 
 #### Observações para execução da chamada :
 
-1. É necessário passar o número real de parcelas, a API opera verificando a quantidade de parcela selecionada e o valor cobrado, valores diferentes da cotaçãorealizada, anteriormente, pode cominar em erros.
+1. É necessário passar o número real de parcelas, a API opera verificando a quantidade de parcela selecionada e o valor cobrado, valores diferentes da cotação realizada, anteriormente, pode cominar em erros.
 2. O valor total a ser cobrado no cartão, deve ter os centavos separados por "," (vírgula) e não ponto. Assim como o parâmetro valorWynk.
-3. O parãmetro valorWynk, deve ser enviado sempre zerado: 00,00. No momento, essa opção não está mais disponível.
+3. O parâmetro valorWynk, deve ser enviado sempre zerado: 00,00. No momento, essa opção não está mais disponível.
 4. O número do cartão deve ser enviado sem espaços ou máscara.
 5. O campo monthyear segue o padrão MMAA.
 
